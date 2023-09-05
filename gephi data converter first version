@@ -82,7 +82,7 @@ def remove_user_selected_urls(url_tuples_list, host, timestamp):
             f.write(f"{line}\n")
 
     start_filtering = False
-    print(f"\nHave a look at the file 'URL List {host} {timestamp}.txt' and remove all the irrelevant URLs, then save the file.")
+    print(f'\nHave a look at the file "URL List {host} {timestamp}.txt" and remove all irrelevant URLs, then save the file.')
     while start_filtering is False:
         user_gives_go_ahead = \
             input("\nWhen you are done and have saved and closed the textfile, type DONE and hit enter: ").upper()
@@ -116,9 +116,10 @@ def create_gephi_csv(filtered_url_list, hostname, timestamp):
         for line in filtered_url_list:
             writer.writerow(line)
 
-    print(f'\nGephi CSV {hostname} {timestamp}.csv is ready.')
+    input(f'\nSuccess! The file "Gephi CSV {hostname} {timestamp}.csv" has been created.'
+          f'\n\nYou can hit any key to exit the program. ')
 
-
+    
 if __name__ == '__main__':
 
     hostname = get_hostname()
